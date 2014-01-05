@@ -1,0 +1,12 @@
+#ignore these files
+*.o
+*.O
+*.bin
+*.img
+*.swp
+*.elf
+*.files
+*.txt
+\#*
+.DS_Store
+objs/
