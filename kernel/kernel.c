@@ -72,7 +72,7 @@ void terminal_initialize()
 		for ( size_t x = 0; x < VGA_WIDTH; x++ )
 		{
 			const size_t index = y * VGA_WIDTH + x;
-			terminal_buffer[index] = make_vgaentry(' ', terminal_color);
+			terminal_buffer[index] = make_vgaentry('+', terminal_color);
 		}
 	}
 }
@@ -100,12 +100,26 @@ void terminal_putchar(char c)
 		}
 	}
 }
+
+void terminal_newline()
+{
+    ++terminal_row;
+    terminal_column = 0;
+}
  
 void terminal_writestring(const char* data)
 {
 	size_t datalen = strlen(data);
 	for ( size_t i = 0; i < datalen; i++ )
-		terminal_putchar(data[i]);
+        {
+		if (data[i] == '\n')
+                {
+                  terminal_newline();
+                } else
+                {
+                  terminal_putchar(data[i]);
+                }
+        }
 }
  
 void kernel_main()
@@ -113,5 +127,5 @@ void kernel_main()
 	terminal_initialize();
 	/* Since there is no support for newlines in terminal_putchar yet, \n will
 	   produce some VGA specific character instead. This is normal. */
-	terminal_writestring("Hello, kernel World!\n");
+	terminal_writestring("Hello, kernel's World!\nSss");
 }
