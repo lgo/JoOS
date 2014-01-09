@@ -44,7 +44,7 @@ build() {
   flist=`cd $KERNEL/; ls *.c;`
   `cd ../`
   for f in $flist; do
-    `$CC -c $KERNEL/$f -o $OBJDIR/${f/.c/.o} -std=gnu99 -ffreestanding -O2 -Wall -Wextra`
+    `$CC -c $KERNEL/$f -o $OBJDIR/${f/.c/.o} -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I./inc`
   done
   echo " [done]"
 
