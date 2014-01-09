@@ -5,3 +5,4 @@ It is developed with the main purpose of learning the foundations of operating s
 Worklog (Functionality list in chronological order)
 -----
 1. implemented newlines and vertical scrolling of lines
+2. implement mutation of previous lines, for changing states of running applications
