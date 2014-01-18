@@ -19,5 +19,5 @@ void kernel_main()
   init_screen();
   
   terminal_writestring("Hello, kernel's World!\nSss");
-  terminal_writestring("Even more\n\n\n hmm \n\n\n\n\n\n\n yes...\n\n\n\n\n\n\n\n\nMORE\nHmm\nYes :)");
+  terminal_writestring("Even more\n\n\n hmm \n\n\n\n\n\n\n yes...\n\n\n\n\n\n\n\n\nMORE\nHmm\nYes :)\nMUAHAHA\n\n\n WEEE SKIP LINE");
 }
