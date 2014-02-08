@@ -85,6 +85,7 @@ void terminal_initline(size_t line)
 /* move all of the characters in the buffer upwards  */
 void terminal_scrollup()
 {
+  
   for (size_t y = 1; y < VGA_HEIGHT; y++)
   {
     for (size_t x = 0; x < VGA_WIDTH; x++)
@@ -94,7 +95,7 @@ void terminal_scrollup()
       terminal_buffer[new_index] = terminal_buffer[index];
     }
   }
-  terminal_initline(VGA_WIDTH);
+  terminal_initline(VGA_HEIGHT - 1);
 }
 
 /* reposition the writing placement */
@@ -129,6 +130,7 @@ void terminal_putchar(char c)
 void terminal_newline()
 {
   terminal_column = VGA_WIDTH - 1; //bit of a hack to get everything to cooperate the way it is
+  
   terminal_resetline();
 }
 
