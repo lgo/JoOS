@@ -30,6 +30,8 @@ _start:
   # Setup of the stack, placing the top of the stack address in the esp register
   movl $stack_top, %esp
 
+  # Disable interrupts for our kernal's purpose
+  cli  
   # Call the main kernel, executing C code
   call kernel_main
 

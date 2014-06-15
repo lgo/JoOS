@@ -172,3 +172,16 @@ void init_screen()
 {
   terminal_initialize();
 }
+
+void terminal_clear()
+{
+  for (size_t i = 0; i < VGA_WIDTH; i++)
+  {
+    for (size_t j = 0; j < VGA_HEIGHT; j++)
+    {
+      terminal_putentryat(COLOR_BLACK, ' ', i, j); 
+    }
+  }
+  terminal_row = 0;
+  terminal_column = 0;
+}
